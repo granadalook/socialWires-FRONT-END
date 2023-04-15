@@ -1,0 +1,62 @@
+<section>
+  <form
+    [formGroup]="formularioRegister"
+    (ngSubmit)="RegisterUsuario(formularioRegister.value)"
+  >
+    <div class="divider d-flex align-items-center my-4">
+      <p class="text-center fw-bold mx-3 mb-0 fs-5">Bienvenido</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="userName"
+        placeholder="userName"
+        type="text"
+        id="form1Example1"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form1Example1">UserName</label>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        formControlName="email"
+        placeholder="email"
+        type="email"
+        id="form2Example2"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form2Example2">Email </label>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        formControlName="password"
+        placeholder="password"
+        type="password"
+        id="form3Example3"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form3Example3">Password</label>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        formControlName="fullName"
+        placeholder="fullName"
+        type="text"
+        id="form4Example4"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form4Example4">fullName</label>
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button
+        (click)="RegisterUsuario(formularioRegister.value)"
+        [disabled]="formularioRegister.invalid"
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Registrarme
+      </button>
+    </div>
+  </form>
+</section>
