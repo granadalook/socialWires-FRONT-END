@@ -34,7 +34,7 @@ export class LoginComponent {
           this.sesionStorage.setJwt(res.access_token);
           this.sesionStorage.setUserName(res.user.userName);
           this.formularioLogin.reset();
-          //this.route.navigate(['']);
+          this.route.navigate(['post']);
         }
       },
       error: (error: HttpErrorResponse) => {

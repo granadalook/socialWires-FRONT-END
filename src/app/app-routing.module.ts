@@ -16,6 +16,13 @@ const routes: Routes = [
         (modulo) => modulo.RegisterModule
       ),
   },
+  {
+    path: 'post',
+    loadChildren: () =>
+      import('./components/post/post.module').then(
+        (modulo) => modulo.PostModule
+      ),
+  },
 ];
 
 @NgModule({
