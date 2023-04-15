@@ -1,1 +1,47 @@
-<p>login works!</p>
+<section>
+  <form [formGroup]="formularioLogin" (ngSubmit)="login(formularioLogin.value)">
+    <div class="divider d-flex align-items-center my-4">
+      <p class="text-center fw-bold mx-3 mb-0 fs-5">Login</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="userName"
+        placeholder="userName"
+        type="text"
+        id="form1Example1"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form1Example1">UserName</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="password"
+        placeholder="password"
+        type="password"
+        id="form3Example3"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form3Example3">Password</label>
+    </div>
+
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button
+        (click)="login(formularioLogin.value)"
+        [disabled]="formularioLogin.invalid"
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Login
+      </button>
+      <p class="small fw-bold mt-2 pt-1 mb-0 registro">
+        No estoy registrado?
+        <a (click)="registro()" class="link-danger" aria-label="Registrarme"
+          >Registrarme</a
+        >
+      </p>
+    </div>
+  </form>
+</section>
