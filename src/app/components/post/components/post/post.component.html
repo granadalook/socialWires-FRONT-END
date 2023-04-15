@@ -1,1 +1,50 @@
 <p>post works!</p>
+<button (click)="getAllPost()">todos</button>
+<section>
+  <form
+    [formGroup]="formularioPost"
+    (ngSubmit)="
+      createPost(formularioPost.value?.titulo, formularioPost.value?.texto)
+    "
+  >
+    <div class="divider d-flex align-items-center my-4">
+      <p class="text-center fw-bold mx-3 mb-0 fs-5">New post</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="titulo"
+        placeholder="titulo"
+        type="text"
+        id="form1Example1"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form1Example1">titulo</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="texto"
+        placeholder="texto"
+        type="text"
+        id="form3Example3"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form3Example3">Texto</label>
+    </div>
+
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button
+        (click)="
+          createPost(formularioPost.value?.titulo, formularioPost.value?.texto)
+        "
+        [disabled]="formularioPost.invalid"
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Crear new post
+      </button>
+    </div>
+  </form>
+</section>

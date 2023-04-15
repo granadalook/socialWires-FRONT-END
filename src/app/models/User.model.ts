@@ -1,3 +1,5 @@
+import { Ipost } from './post.model';
+
 export interface Iuser {
   id: string;
   userName: string;
@@ -5,4 +7,5 @@ export interface Iuser {
   password: string;
   fullName: string;
   creacion: Date;
+  posts: Ipost;
 }
