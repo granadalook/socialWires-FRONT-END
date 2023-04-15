@@ -1,61 +1,68 @@
-<section>
+<section class="container">
   <form
     [formGroup]="formularioRegister"
     (ngSubmit)="RegisterUsuario(formularioRegister.value)"
   >
-    <div class="divider d-flex align-items-center my-4">
-      <p class="text-center fw-bold mx-3 mb-0 fs-5">Bienvenido</p>
-    </div>
+    <picture class="container-image">
+      <img
+        class="image-main"
+        src="../../../../../assets/img/image 2.png"
+        alt="image-wire"
+      />
+      <h2 class="title">Wires</h2>
+    </picture>
 
-    <div class="form-outline mb-4">
+    <h2 class="titulo">Welcome to Wires</h2>
+
+    <div class="input-text">
+      <label class="label" for="form1Example1">UserName</label>
       <input
         formControlName="userName"
         placeholder="userName"
         type="text"
         id="form1Example1"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form1Example1">UserName</label>
     </div>
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form2Example2">Email </label>
       <input
         formControlName="email"
         placeholder="email"
         type="email"
         id="form2Example2"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form2Example2">Email </label>
     </div>
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form3Example3">Password</label>
       <input
         formControlName="password"
         placeholder="password"
         type="password"
         id="form3Example3"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form3Example3">Password</label>
     </div>
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form4Example4">fullName</label>
       <input
         formControlName="fullName"
         placeholder="fullName"
         type="text"
         id="form4Example4"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form4Example4">fullName</label>
     </div>
-    <div class="text-center text-lg-start mt-4 pt-2">
+    <div class="boton-container">
       <button
         (click)="RegisterUsuario(formularioRegister.value)"
         [disabled]="formularioRegister.invalid"
         type="button"
-        class="btn btn-primary btn-lg"
+        class="boton-register"
         style="padding-left: 2.5rem; padding-right: 2.5rem"
       >
-        Registrarme
+        Create
       </button>
     </div>
   </form>

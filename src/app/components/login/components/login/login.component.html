@@ -1,47 +1,50 @@
-<section>
+<section class="container">
   <form [formGroup]="formularioLogin" (ngSubmit)="login(formularioLogin.value)">
-    <div class="divider d-flex align-items-center my-4">
-      <p class="text-center fw-bold mx-3 mb-0 fs-5">Login</p>
+    <picture class="container-image">
+      <img
+        class="image-main"
+        src="../../../../../assets/img/image 2.png"
+        alt="image-wire"
+      />
+      <h2 class="title">Wires</h2>
+    </picture>
+    <h2 class="titulo">Welcome to Wires</h2>
+    <div class="container-button-register">
+      <button class="boton-register" (click)="registro()">Sign up</button>
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form1Example1">UserName</label>
       <input
         formControlName="userName"
         placeholder="userName"
         type="text"
         id="form1Example1"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form1Example1">UserName</label>
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form3Example3">Password</label>
       <input
         formControlName="password"
         placeholder="password"
         type="password"
         id="form3Example3"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form3Example3">Password</label>
     </div>
 
-    <div class="text-center text-lg-start mt-4 pt-2">
+    <div class="boton-container">
       <button
         (click)="login(formularioLogin.value)"
         [disabled]="formularioLogin.invalid"
         type="button"
-        class="btn btn-primary btn-lg"
+        class="boton-login"
         style="padding-left: 2.5rem; padding-right: 2.5rem"
       >
         Login
       </button>
-      <p class="small fw-bold mt-2 pt-1 mb-0 registro">
-        No estoy registrado?
-        <a (click)="registro()" class="link-danger" aria-label="Registrarme"
-          >Registrarme</a
-        >
-      </p>
     </div>
   </form>
 </section>
