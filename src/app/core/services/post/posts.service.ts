@@ -28,4 +28,11 @@ export class PostsService {
       newpost
     );
   }
+
+  filterByDate(frontDate: Date, toDate: Date) {
+    console.log('frontDate', frontDate);
+    return this.http.get<Array<Ipost>>(
+      `${environment.Url_Base}${environment.FilterByDate}?fromDate=${frontDate}&toDate=${toDate}`
+    );
+  }
 }

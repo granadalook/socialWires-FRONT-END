@@ -4,4 +4,6 @@ export const environment = {
   Login: 'login/login',
   UserName: 'users/userName/',
   Post: 'post',
+  FilterByDate: 'post/filterByDate',
+  FilterByText: 'users/filterAll/',
 };

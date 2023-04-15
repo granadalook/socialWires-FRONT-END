@@ -1,0 +1,87 @@
+<button (click)="getAllPost()">traer todos</button>
+
+<section>
+  <form
+    [formGroup]="formularioDate"
+    (ngSubmit)="
+      filterByDate(
+        formularioDate.value?.frontDate,
+        formularioDate.value?.toDate
+      )
+    "
+  >
+    <div class="divider d-flex align-items-center my-4">
+      <p class="text-center fw-bold mx-3 mb-0 fs-5">Login</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="frontDate"
+        placeholder="frontDate"
+        type="datetime-local"
+        id="form1Example1"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form1Example1">FrontDate</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="toDate"
+        placeholder="toDate"
+        type="datetime-local"
+        id="form3Example3"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form3Example3">toDate</label>
+    </div>
+
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button
+        (click)="
+          filterByDate(
+            formularioDate.value?.frontDate,
+            formularioDate.value?.toDate
+          )
+        "
+        [disabled]="formularioDate.invalid"
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Find
+      </button>
+    </div>
+  </form>
+
+  <form
+    [formGroup]="formularioText"
+    (ngSubmit)="filterByText(formularioText.value?.text)"
+  >
+    <div class="divider d-flex align-items-center my-4">
+      <p class="text-center fw-bold mx-3 mb-0 fs-5">Buscar por palabra</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        formControlName="text"
+        placeholder="text"
+        type="text"
+        id="form1Example1"
+        class="form-control form-control-lg"
+      />
+      <label class="form-label" for="form1Example1">Text</label>
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button
+        (click)="filterByText(formularioText.value?.text)"
+        [disabled]="formularioText.invalid"
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Buscar por palabra
+      </button>
+    </div>
+  </form>
+</section>

@@ -23,6 +23,13 @@ const routes: Routes = [
         (modulo) => modulo.PostModule
       ),
   },
+  {
+    path: 'Allpost',
+    loadChildren: () =>
+      import('./components/all-post/all-post.module').then(
+        (modulo) => modulo.AllPostModule
+      ),
+  },
 ];
 
 @NgModule({
