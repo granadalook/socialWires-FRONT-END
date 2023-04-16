@@ -1,6 +1,41 @@
-<button (click)="getAllPost()">traer todos</button>
+<section class="container">
+  <div class="container-titulo">
+    <h1 class="titulo">All Message</h1>
+  </div>
+  <form
+    class="formulario-palabra"
+    [formGroup]="formularioText"
+    (ngSubmit)="filterByText(formularioText.value?.text)"
+  >
+    <div class="input-text">
+      <label class="label" for="form1Example1">What search?</label>
+      <div class="input-button">
+        <input
+          formControlName="text"
+          placeholder="I like sports"
+          type="text"
+          id="form1Example1"
+          class="input"
+        />
+        <button
+          (click)="filterByText(formularioText.value?.text)"
+          [disabled]="formularioText.invalid"
+          type="button"
+          class="boton-input"
+        >
+          <img
+            class="imagen-boton"
+            src="../../../../../assets/icon/chatbox-ellipses.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
+  </form>
 
-<section>
+  <div class="container-titulo">
+    <h4 class="titulo-date">Date select</h4>
+  </div>
   <form
     [formGroup]="formularioDate"
     (ngSubmit)="
@@ -10,33 +45,29 @@
       )
     "
   >
-    <div class="divider d-flex align-items-center my-4">
-      <p class="text-center fw-bold mx-3 mb-0 fs-5">Login</p>
-    </div>
-
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form1Example1">Start date</label>
       <input
         formControlName="frontDate"
         placeholder="frontDate"
         type="datetime-local"
         id="form1Example1"
-        class="form-control form-control-lg"
+        class="input-date"
       />
-      <label class="form-label" for="form1Example1">FrontDate</label>
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form3Example3"> To date</label>
       <input
         formControlName="toDate"
         placeholder="toDate"
         type="datetime-local"
         id="form3Example3"
-        class="form-control form-control-lg"
+        class="input-date"
       />
-      <label class="form-label" for="form3Example3">toDate</label>
     </div>
 
-    <div class="text-center text-lg-start mt-4 pt-2">
+    <div class="boton-container">
       <button
         (click)="
           filterByDate(
@@ -46,41 +77,10 @@
         "
         [disabled]="formularioDate.invalid"
         type="button"
-        class="btn btn-primary btn-lg"
-        style="padding-left: 2.5rem; padding-right: 2.5rem"
+        class="boton-login"
+
       >
         Find
-      </button>
-    </div>
-  </form>
-
-  <form
-    [formGroup]="formularioText"
-    (ngSubmit)="filterByText(formularioText.value?.text)"
-  >
-    <div class="divider d-flex align-items-center my-4">
-      <p class="text-center fw-bold mx-3 mb-0 fs-5">Buscar por palabra</p>
-    </div>
-
-    <div class="form-outline mb-4">
-      <input
-        formControlName="text"
-        placeholder="text"
-        type="text"
-        id="form1Example1"
-        class="form-control form-control-lg"
-      />
-      <label class="form-label" for="form1Example1">Text</label>
-    </div>
-    <div class="text-center text-lg-start mt-4 pt-2">
-      <button
-        (click)="filterByText(formularioText.value?.text)"
-        [disabled]="formularioText.invalid"
-        type="button"
-        class="btn btn-primary btn-lg"
-        style="padding-left: 2.5rem; padding-right: 2.5rem"
-      >
-        Buscar por palabra
       </button>
     </div>
   </form>

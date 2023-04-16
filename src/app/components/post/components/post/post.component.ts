@@ -29,6 +29,7 @@ export class PostComponent {
   });
 
   ngOnInit(): void {
+    //this.getAllPost()
     this.getPostByUserName();
   }
   getPostByUserName() {
