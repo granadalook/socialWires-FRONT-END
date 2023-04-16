@@ -15,8 +15,7 @@ import { Ipost } from 'src/app/models/post.model';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  post: Array<Ipost> = [];
-
+  posts: Array<Ipost> = [];
   constructor(
     private formBuilder: UntypedFormBuilder,
     private postService: PostsService,
@@ -30,21 +29,21 @@ export class PostComponent {
 
   ngOnInit(): void {
     //this.getAllPost()
-    this.getPostByUserName();
+    //this.getPostByUserName();
   }
   getPostByUserName() {
     this.postService
       .getPostByUserName(this.sesionService.getUserName())
       .subscribe((user) => {
         if (user) {
-          this.post.unshift(user.posts);
+          this.posts.unshift(user.posts);
         }
       });
   }
 
   getAllPost() {
     this.postService.getAllPost().subscribe((respuesta) => {
-      this.post = respuesta;
+      this.posts = respuesta;
     });
   }
 
@@ -55,7 +54,7 @@ export class PostComponent {
       userName: this.sesionService.getUserName(),
     };
     this.postService.createPost(newPost).subscribe((respuesta) => {
-      this.post.unshift(respuesta);
+      this.posts.unshift(respuesta);
       this.formularioPost.reset();
     });
   }

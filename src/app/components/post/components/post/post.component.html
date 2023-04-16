@@ -43,15 +43,13 @@
         Share
       </button>
     </div>
-    <ng-container *ngFor="let post of post">
-      <div class="container-card">
-        <h1 class="titulo-card">{{ post.title }}</h1>
-        <h3 class="texto-card">{{ post.texto }}</h3>
+    <ng-container  *ngFor="let post of posts">
+      <div class="card">
+        <h1 class="title">{{ post.title }}</h1>
+        <h4 class="texto">{{ post.texto }}</h4>
         <div class="footer-card">
-          <h6 class="fecha-card">
-            {{ post.fechaCreacion | date : "short" }}
-          </h6>
-          <h3 class="username-card">By: {{ post.user.userName }}</h3>
+          <h6 class="fecha">{{ post.fechaCreacion | date : "short" }}</h6>
+          <h5 class="unserName">By: {{ post.user.userName }}</h5>
         </div>
       </div>
     </ng-container>

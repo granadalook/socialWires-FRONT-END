@@ -17,7 +17,9 @@
     border: 1px solid white;
     border-radius: 10px;
     padding: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: transparent;
   }
 }
 .container {
@@ -41,41 +43,19 @@
   padding: 10px;
   cursor: pointer;
 }
-.container-card {
-  background-color: white;
+.card {
+  background-color: #fffffe;
+  width: 300px;
+  height: 160px;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 8px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: flex-start;
-  border-radius: 9px;
-  margin-top: 15px;
-  width: 280px;
+  justify-content: space-between;
 }
-.titulo-card {
-  background-color: transparent;
-  font-weight: bold;
-}
-.texto-card {
-  background-color: transparent;
-  font-weight: 200;
-  font-size: 15px;
-}
+
 .footer-card {
-  background-color: transparent;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: max-content;
-}
-.fecha-card {
-  background-color: transparent;
-  margin-right: 12px;
-}
-.username-card {
-  background-color: transparent;
-  font-weight: bold;
-  margin-left: 12px;
+  justify-content: space-between;
 }

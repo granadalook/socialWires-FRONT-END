@@ -5,5 +5,5 @@ export const environment = {
   UserName: 'users/userName/',
   Post: 'post',
   FilterByDate: 'post/filterByDate',
-  FilterByText: 'users/filterAll/',
+  FilterByText: 'post/filterAll/',
 };

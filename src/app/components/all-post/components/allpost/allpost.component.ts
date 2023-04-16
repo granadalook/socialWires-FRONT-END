@@ -14,7 +14,7 @@ import { UsersService } from '../../../../core/services/users/users.service';
   styleUrls: ['./allpost.component.scss'],
 })
 export class AllpostComponent {
-  post: Array<Ipost> = [];
+  posts: Array<Ipost> = [];
 
   formularioDate: UntypedFormGroup = this.formBuilder.group({
     frontDate: [Date, [Validators.required]],
@@ -31,21 +31,22 @@ export class AllpostComponent {
   ) {}
   getAllPost() {
     this.postService.getAllPost().subscribe((respuesta) => {
-      this.post = respuesta;
-      console.log('this.post', this.post);
+      this.posts = [];
+      this.posts = respuesta;
     });
   }
 
   filterByDate(frontDate: Date, toDate: Date) {
     this.postService.filterByDate(frontDate, toDate).subscribe((response) => {
-      console.log('response', response);
+      this.posts = [];
+      this.posts = response;
     });
   }
 
   filterByText(text: string) {
-    console.log('text', text);
     this.UsersService.FilterByText(text).subscribe((response) => {
-      console.log('response', response);
+      this.posts = [];
+      this.posts = response;
     });
   }
 }
