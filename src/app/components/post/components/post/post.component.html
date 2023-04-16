@@ -1,50 +1,61 @@
-<p>post works!</p>
-<button (click)="getAllPost()">todos</button>
-<section>
+<!-- <button (click)="getAllPost()">todos</button> -->
+<section class="container">
   <form
     [formGroup]="formularioPost"
     (ngSubmit)="
       createPost(formularioPost.value?.titulo, formularioPost.value?.texto)
     "
   >
-    <div class="divider d-flex align-items-center my-4">
-      <p class="text-center fw-bold mx-3 mb-0 fs-5">New post</p>
+    <div class="container-titulo">
+      <h1 class="titulo">Create message</h1>
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form1Example1">Title messages</label>
       <input
         formControlName="titulo"
-        placeholder="titulo"
+        placeholder="Talk about me"
         type="text"
         id="form1Example1"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form1Example1">titulo</label>
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="input-text">
+      <label class="label" for="form3Example3">Messages</label>
       <input
         formControlName="texto"
-        placeholder="texto"
+        placeholder="Create message for share ehite friends"
         type="text"
         id="form3Example3"
-        class="form-control form-control-lg"
+        class="input"
       />
-      <label class="form-label" for="form3Example3">Texto</label>
     </div>
 
-    <div class="text-center text-lg-start mt-4 pt-2">
+    <div class="boton-container">
       <button
         (click)="
           createPost(formularioPost.value?.titulo, formularioPost.value?.texto)
         "
         [disabled]="formularioPost.invalid"
         type="button"
-        class="btn btn-primary btn-lg"
+        class="boton-register"
         style="padding-left: 2.5rem; padding-right: 2.5rem"
       >
-        Crear new post
+        Share
       </button>
     </div>
+    <ng-container *ngFor="let post of post">
+      <div class="container-card">
+        <h1 class="titulo-card">{{ post.title | uppercase }}</h1>
+        <h3 class="texto-card">{{ post.texto }}</h3>
+        <div class="footer-card">
+          <h6 class="fecha-card">
+            {{ post.fechaCreacion | date : "short" }}
+          </h6>
+          <h3 class="username-card">{{ post.user.userName }}</h3>
+        </div>
+      </div>
+    </ng-container>
   </form>
 </section>
