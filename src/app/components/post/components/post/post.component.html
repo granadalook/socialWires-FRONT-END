@@ -33,6 +33,13 @@
 
     <div class="boton-container">
       <button
+        (click)="getPostByUserName()"
+        type="button"
+        class="boton-register"
+      >
+        My message
+      </button>
+      <button
         (click)="
           createPost(formularioPost.value?.titulo, formularioPost.value?.texto)
         "
@@ -43,13 +50,23 @@
         Share
       </button>
     </div>
-    <ng-container  *ngFor="let post of posts">
+    <ng-container *ngFor="let post of posts">
       <div class="card">
         <h1 class="title">{{ post.title }}</h1>
         <h4 class="texto">{{ post.texto }}</h4>
         <div class="footer-card">
           <h6 class="fecha">{{ post.fechaCreacion | date : "short" }}</h6>
           <h5 class="unserName">By: {{ post.user.userName }}</h5>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let post of myPosts">
+      <div class="card">
+        <h1 class="title">{{ post.title }}</h1>
+        <h4 class="texto">{{ post.texto }}</h4>
+        <div class="footer-card">
+          <h6 class="fecha">{{ post.fechaCreacion | date : "short" }}</h6>
+          <h5 class="unserName">Your messages</h5>
         </div>
       </div>
     </ng-container>

@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     title: 'Allpost',
     component: AllpostComponent,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
   },
 ];
 

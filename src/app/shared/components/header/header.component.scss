@@ -1,0 +1,45 @@
+.botones {
+  border-color: transparent;
+  color: #ffffff;
+  background-color: transparent;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header {
+  height: 35px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.item-header {
+  color: #f9fd6d;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.link {
+  display: none;
+}
+.contenedor:hover .link {
+  display: block;
+  border-color: transparent;
+  color: #ffffff;
+  background-color: transparent;
+  margin-right: 8px;
+  margin-top: 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.contenedor {
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+}
+.userName {
+  color: #f9fd6d;
+}

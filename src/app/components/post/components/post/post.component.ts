@@ -16,6 +16,8 @@ import { Ipost } from 'src/app/models/post.model';
 })
 export class PostComponent {
   posts: Array<Ipost> = [];
+  myPosts: Array<Ipost> = [];
+
   constructor(
     private formBuilder: UntypedFormBuilder,
     private postService: PostsService,
@@ -27,17 +29,12 @@ export class PostComponent {
     texto: ['', [Validators.required]],
   });
 
-  ngOnInit(): void {
-    //this.getAllPost()
-    //this.getPostByUserName();
-  }
+  ngOnInit(): void {}
   getPostByUserName() {
     this.postService
       .getPostByUserName(this.sesionService.getUserName())
-      .subscribe((user) => {
-        if (user) {
-          this.posts.unshift(user.posts);
-        }
+      .subscribe((posts) => {
+        this.myPosts = posts;
       });
   }
 

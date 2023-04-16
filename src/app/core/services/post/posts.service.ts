@@ -11,7 +11,7 @@ import { environment } from 'src/environments/envitonmetns';
 export class PostsService {
   constructor(private http: HttpClient) {}
   getPostByUserName(userName: string | null) {
-    return this.http.get<Iuser>(
+    return this.http.get<Array<Ipost>>(
       `${environment.Url_Base}${environment.UserName}${userName}`
     );
   }

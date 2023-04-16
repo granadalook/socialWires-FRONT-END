@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="container">
+    <div class="item-header">
+      <span style="cursor: pointer" (click)="login()" class="text-white"
+        >SocialWire</span
+      >
+    </div>
+    <div *ngIf="!usuario?.user?.userName">
+      <button (click)="login()" class="botones">Login</button>
+    </div>
+
+    <div *ngIf="usuario?.user?.userName">
+      <div class="contenedor">
+        <h1 class="userName">{{ usuario?.user?.userName }}</h1>
+        <button (click)="CreateMessage()" class="link">Create Messages</button>
+        <button (click)="AllMessages()" class="link">See all message</button>
+        <button (click)="logOut()" class="link">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>
